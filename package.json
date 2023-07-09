@@ -4,8 +4,10 @@
   "description": "Understanding TypeScript Course Setup",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "lite-server"
+    "start": "concurrently \"npm run build:watch\" \"npm run serve\"",
+    "build": "tsc",
+    "build:watch": "tsc -w",
+    "serve": "lite-server"
   },
   "keywords": [
     "typescript",
@@ -14,6 +16,10 @@
   "author": "Maximilian Schwarzmüller",
   "license": "ISC",
   "devDependencies": {
-    "lite-server": "^2.5.4"
+    "concurrently": "^8.2.0",
+    "lite-server": "^2.6.1"
+  },
+  "dependencies": {
+    "typescript": "^5.1.6"
   }
 }
